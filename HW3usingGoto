@@ -1,0 +1,109 @@
+using System;
+
+namespace HW3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        initiate: int intnumber, intresult = 1;
+            string con;
+          Console.WriteLine("give me n:");
+            intnumber = int.Parse(Console.ReadLine());
+            int o = 1;
+        factorial:
+
+            intresult = intresult * o;
+            if (o < intnumber)
+            {
+                o++;
+                goto factorial;
+            }
+            
+            switch (intresult)
+            {
+                case 6:
+                    int min = 2147483647, temp,i=1;
+                    
+             nextnum1:           Console.WriteLine("enter the {0} th number:", i);
+                        temp = int.Parse(Console.ReadLine());
+                        if (temp < min)
+                        {
+                            min = temp;
+                        }
+                    i++;
+                    if (i <= 6)
+                    {
+                        goto nextnum1;
+                    }
+                    
+                    Console.WriteLine("min value was: {0}", min);
+                    break;
+                case 24:
+                    int f0 = 1, f1 = 1, f2;
+                    Console.Write("1  ,  1  , ");
+                    int j = 1;
+            nextnum2:      
+                    
+                        f2 = f0 + f1;
+                        Console.Write("{0} , ", f2);
+                        f0 = f1;
+                        f1 = f2;
+                    j++;
+                    if(j <= 10)
+                    {
+                        goto nextnum2;
+                    }
+                    
+                    Console.Write("\n");
+                    break;
+                case 120:
+                    float sum = 0;int k = 1;
+
+                nextnum3:
+                    Console.WriteLine("enter the {0} th number:", k);
+                    temp = int.Parse(Console.ReadLine());
+                    sum = sum + temp;
+                    k++;
+                    if (k <= 5)
+                    {
+                        goto nextnum3;
+                    }
+                    
+                    sum = (float)sum / 5;
+                    Console.WriteLine("mean is: " + sum);
+                    break;
+                case 720:
+                    int max = -2147483648, r = 1;
+
+
+              nextnumber4: Console.WriteLine("enter the {0} th number:", r);
+                        temp = int.Parse(Console.ReadLine());
+                    if (temp == -1)
+                        goto breakwhile;
+                    else if (temp > max)
+                    {
+                        max = temp;
+                    }
+                        r++;
+                    goto nextnumber4;
+                   breakwhile: Console.WriteLine("max value was: {0}", max);
+                    break;
+                case 5040:
+                    Console.WriteLine("L.NazariAsl");
+                    break;
+                default:
+                    Console.WriteLine("out of scope.");
+                    break;
+
+            }
+            Console.WriteLine("do you wish to proceed? ");
+            con = Console.ReadLine();
+            if (con == "Y" || con == "y")
+                goto initiate;
+            Console.WriteLine("press any key to continue...");
+            Console.ReadKey();
+
+        }
+    }
+}
