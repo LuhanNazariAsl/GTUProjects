@@ -1,0 +1,91 @@
+
+using System;
+
+namespace HW3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        initiate: int intnumber, intresult = 1;
+            string con;
+          Console.WriteLine("give me n:");
+            intnumber = int.Parse(Console.ReadLine());
+            for (int i=1; i <= intnumber; i++)
+            {
+                intresult = intresult * i;
+            }
+            switch (intresult)
+            {
+                case 6:
+                    int min = 2147483647, temp;
+                    for(int i = 1; i <= 6; i++)
+                    {
+                        Console.WriteLine("enter the {0} th number:", i);
+                        temp = int.Parse(Console.ReadLine());
+                        if (temp < min)
+                        {
+                            min = temp;
+                        }
+                    }
+                    Console.WriteLine("min value was: {0}", min);
+                    break;
+                case 24:
+                    int f0 = 1, f1 = 1, f2;
+                    Console.Write("1  ,  1  , ");
+                    for(int j = 1; j <= 10; j++)
+                    {
+                        f2 = f0 + f1;
+                        Console.Write("{0} , ", f2);
+                        f0 = f1;
+                        f1 = f2;
+
+                    }
+                    Console.Write("\n");
+                    break;
+                case 120:
+                    float sum = 0;
+                    for(int k = 1; k<= 5; k++)
+                    {
+                        Console.WriteLine("enter the {0} th number:", k);
+                        temp = int.Parse(Console.ReadLine());
+                        sum = sum + temp;
+                    }
+                    sum = (float)sum / 5;
+                    Console.WriteLine("mean is: " + sum);
+                    break;
+                case 720:
+                    int max = -2147483648, r = 1;
+
+                    while (true)
+                    {
+                        Console.WriteLine("enter the {0} th number:", r);
+                        temp = int.Parse(Console.ReadLine());
+                        if (temp == -1)
+                            break;
+                        else if (temp > max)
+                        {
+                            max = temp;
+                        }
+                        r++;
+                    }
+                    Console.WriteLine("max value was: {0}", max);
+                    break;
+                case 5040:
+                    Console.WriteLine("L.NazariAsl");
+                    break;
+                default:
+                    Console.WriteLine("out of scope.");
+                    break;
+
+            }
+            Console.WriteLine("do you wish to proceed? ");
+            con = Console.ReadLine();
+            if (con == "Y" || con == "y")
+                goto initiate;
+            Console.WriteLine("press any key to continue...");
+            Console.ReadKey();
+
+        }
+    }
+}
