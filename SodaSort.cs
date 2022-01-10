@@ -61,11 +61,6 @@ namespace Soda_Sort
 {
     class Program
     {
-        static int PopPush(int i, int j)
-        {
-
-            return 0;
-        }
         static void Main(string[] args)
         {
 
